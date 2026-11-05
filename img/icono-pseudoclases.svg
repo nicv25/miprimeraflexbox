@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pseudoclases y pseudoelementos">
+  <circle cx="32" cy="32" r="31" fill="#ffffff"/>
+  <rect x="10" y="16" width="30" height="14" rx="7" fill="#96A84A"/>
+  <text x="25" y="26.5" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">:hover</text>
+  <path d="M36 30 L36 52 L41 47 L45 55 L49 53 L45 45 L52 45 Z" fill="#262B0A" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="18" y="46" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#637309" text-anchor="middle">::</text>
+</svg>

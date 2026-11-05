@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="CSS fácil: cambia el tamaño de la letra">
+  <rect x="8" y="8" width="384" height="284" rx="22" fill="#ffffff"/>
+  <text x="200" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS fácil</text>
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="16" fill="#637309" text-anchor="middle">2. Cambia el tamaño</text>
+  <rect x="60" y="100" width="280" height="40" rx="10" fill="#262B0A"/>
+  <text x="200" y="126" font-family="Consolas, monospace" font-size="17" fill="#D8EB67" text-anchor="middle">p { font-size: 32px; }</text>
+  <text x="70" y="232" font-family="Arial, sans-serif" font-size="16" fill="#464F23">Aa</text>
+  <text x="120" y="232" font-family="Arial, sans-serif" font-size="28" fill="#637309">Aa</text>
+  <text x="190" y="232" font-family="Arial, sans-serif" font-size="44" fill="#96A84A">Aa</text>
+  <text x="280" y="232" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#262B0A">Aa</text>
+  <text x="200" y="272" font-family="Arial, sans-serif" font-size="14" fill="#6b6f5a" text-anchor="middle">16px  ·  28px  ·  44px  ·  64px</text>
+</svg>

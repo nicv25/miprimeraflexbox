@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Estructura y sintaxis">
+  <circle cx="32" cy="32" r="31" fill="#ffffff"/>
+  <path d="M24 16c-6 0-6 4-6 8v4c0 2-2 4-5 4 3 0 5 2 5 4v4c0 4 0 8 6 8" fill="none" stroke="#464F23" stroke-width="4" stroke-linecap="round"/>
+  <path d="M40 16c6 0 6 4 6 8v4c0 2 2 4 5 4-3 0-5 2-5 4v4c0 4 0 8-6 8" fill="none" stroke="#464F23" stroke-width="4" stroke-linecap="round"/>
+  <rect x="25" y="25" width="14" height="4" rx="2" fill="#96A84A"/>
+  <rect x="25" y="35" width="10" height="4" rx="2" fill="#637309"/>
+</svg>

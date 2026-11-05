@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="CSS fácil: cambia el color de un texto">
+  <rect x="8" y="8" width="384" height="284" rx="22" fill="#ffffff"/>
+  <text x="200" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS fácil</text>
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="16" fill="#637309" text-anchor="middle">1. Dale color</text>
+  <rect x="34" y="104" width="160" height="96" rx="10" fill="#262B0A"/>
+  <text x="48" y="138" font-family="Consolas, monospace" font-size="16" fill="#D8EB67">h1 {</text>
+  <text x="62" y="162" font-family="Consolas, monospace" font-size="16" fill="#ffffff">color: green;</text>
+  <text x="48" y="186" font-family="Consolas, monospace" font-size="16" fill="#D8EB67">}</text>
+  <path d="M206 152 h26 m-10 -10 l10 10 l-10 10" fill="none" stroke="#96A84A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="244" y="104" width="124" height="96" rx="10" fill="#f3f6e4"/>
+  <text x="306" y="162" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#3c8c1e" text-anchor="middle">Hola</text>
+  <circle cx="80" cy="248" r="16" fill="#96A84A"/><circle cx="120" cy="248" r="16" fill="#637309"/><circle cx="160" cy="248" r="16" fill="#D8EB67"/>
+  <text x="194" y="254" font-family="Arial, sans-serif" font-size="15" fill="#464F23">¡Un selector, una propiedad!</text>
+</svg>

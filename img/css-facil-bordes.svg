@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="CSS fácil: bordes redondeados y sombras">
+  <rect x="8" y="8" width="384" height="284" rx="22" fill="#ffffff"/>
+  <text x="200" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS fácil</text>
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="16" fill="#637309" text-anchor="middle">4. Bordes y sombras</text>
+  <rect x="44" y="110" width="120" height="90" fill="#BBC97D"/>
+  <text x="104" y="230" font-family="Consolas, monospace" font-size="14" fill="#6b6f5a" text-anchor="middle">antes</text>
+  <path d="M180 155 h30 m-10 -10 l10 10 l-10 10" fill="none" stroke="#96A84A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="236" y="118" width="120" height="90" rx="24" fill="#c9cdb5"/>
+  <rect x="228" y="110" width="120" height="90" rx="24" fill="#96A84A" stroke="#464F23" stroke-width="4"/>
+  <text x="288" y="230" font-family="Consolas, monospace" font-size="14" fill="#6b6f5a" text-anchor="middle">después</text>
+  <text x="200" y="268" font-family="Consolas, monospace" font-size="15" fill="#262B0A" text-anchor="middle">border-radius: 24px;  box-shadow</text>
+</svg>

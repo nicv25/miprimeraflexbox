@@ -10,8 +10,28 @@
 
 
     <style>
+        .icono-nav {
+            width: 28px;
+            height: 28px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .seccion-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .ilustracion {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
         .caja1 {
-            height: 100px;
+            min-height: 100px;
             background-color: #B5B99F;
         }
 
@@ -66,28 +86,47 @@
     <div class="container-fluid">
         <div class="row">
             <nav
-                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex p-4 justify-content-center">
+                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex flex-wrap gap-2 p-4 justify-content-center">
 
-                <a href="#" class="btn btn-outline-light" role="button">Estructura y sintaxis
-                    <img src="estructura y sintaxis" alt="Estructura y sintaxis">
+                <a href="#" class="btn btn-outline-light" role="button">
+                    <img src="img/icono-estructura.svg" alt="" class="icono-nav">
+                    Estructura y sintaxis
                 </a>
-                <a href="#" class="btn btn-outline-light" role="button">niveles de especificidad</a>
-                <a href="#" class="btn btn-outline-light" role="button">pseudoclases y elementos</a>
-                <a href="#" class="btn btn-outline-light" role="button">box model</a>
+                <a href="#" class="btn btn-outline-light" role="button">
+                    <img src="img/icono-especificidad.svg" alt="" class="icono-nav">
+                    Niveles de especificidad
+                </a>
+                <a href="#" class="btn btn-outline-light" role="button">
+                    <img src="img/icono-pseudoclases.svg" alt="" class="icono-nav">
+                    Pseudoclases y elementos
+                </a>
+                <a href="#" class="btn btn-outline-light" role="button">
+                    <img src="img/icono-boxmodel.svg" alt="" class="icono-nav">
+                    Box model
+                </a>
 
             </nav>
             <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 caja2">caja 2</header>
             <aside class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja3">caja 3</aside>
-            <section class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja4">caja 4</section>
+            <section class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja4 seccion-img">
+                <img src="img/css-facil-color.svg" alt="CSS fácil: cambia el color de un texto" class="ilustracion">
+            </section>
             <aside class="col-6 col-sm-6 col-md-10 col-lg-10 col-xl-4 col-xxl-4 caja5">caja 5</aside>
-            <section class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-3 col-xxl-3 caja6">caja 6</section>
-            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">caja 7</section>
-            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-7 col-xxl-7 caja8">caja 8</section>
-            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-5 col-xxl-5 caja9">caja 9</section>
+            <section class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-3 col-xxl-3 caja6 seccion-img">
+                <img src="img/css-facil-tamano.svg" alt="CSS fácil: cambia el tamaño de la letra" class="ilustracion">
+            </section>
+            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7 seccion-img">
+                <img src="img/css-facil-pincel.svg" alt="CSS fácil: el pincel de tu página web" class="ilustracion">
+            </section>
+            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-7 col-xxl-7 caja8 seccion-img">
+                <img src="img/css-facil-flexbox.svg" alt="CSS fácil: ordena cajas con flexbox" class="ilustracion">
+            </section>
+            <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-5 col-xxl-5 caja9 seccion-img">
+                <img src="img/css-facil-bordes.svg" alt="CSS fácil: bordes redondeados y sombras" class="ilustracion">
+            </section>
             <footer class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 caja10">caja 10</footer>
         </div>
 
-    </div>
     </div>
 </body>
 

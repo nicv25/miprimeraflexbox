@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Niveles de especificidad">
+  <circle cx="32" cy="32" r="31" fill="#ffffff"/>
+  <rect x="12" y="38" width="12" height="14" rx="2" fill="#BBC97D"/>
+  <rect x="26" y="20" width="12" height="32" rx="2" fill="#637309"/>
+  <rect x="40" y="30" width="12" height="22" rx="2" fill="#96A84A"/>
+  <text x="18" y="35" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#464F23" text-anchor="middle">p</text>
+  <text x="32" y="17" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#262B0A" text-anchor="middle">#</text>
+  <text x="46" y="27" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#464F23" text-anchor="middle">.</text>
+</svg>
