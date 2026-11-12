@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="CSS fácil: las cuatro capas del box model">
+  <rect x="8" y="8" width="384" height="284" rx="22" fill="#FBF8F3"/>
+  <text x="200.0" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS fácil</text>
+  <text x="200.0" y="80" font-family="Arial, sans-serif" font-size="16" fill="#637309" text-anchor="middle">5. Las 4 capas juntas</text>
+  <rect x="40" y="96" width="320" height="160" rx="10" fill="#F2BFA0"/>
+  <rect x="78" y="118" width="244" height="116" rx="8" fill="#E6B85C"/>
+  <rect x="88" y="128" width="224" height="96" rx="6" fill="#D8EB67"/>
+  <rect x="134" y="152" width="132" height="48" rx="6" fill="#C9D8EE"/>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#262B0A">
+    <text x="50" y="113">margin</text>
+    <text x="96" y="145">padding</text>
+    <text x="200" y="181" text-anchor="middle">contenido</text>
+    <text x="330" y="113" text-anchor="end">border</text>
+  </g>
+  <text x="200" y="282" font-family="Arial, sans-serif" font-size="15" fill="#464F23" text-anchor="middle">margin › border › padding › contenido</text>
+
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="CSS fácil: margin, espacio por fuera">
+  <rect x="8" y="8" width="224" height="284" rx="22" fill="#FBF8F3"/>
+  <text x="120.0" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS</text><text x="120.0" y="76" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#637309" text-anchor="middle">fácil</text>
+  
+  <rect x="60" y="100" width="120" height="48" rx="8" fill="#C9D8EE"/>
+  <rect x="60" y="196" width="120" height="48" rx="8" fill="#C9D8EE"/>
+  <rect x="60" y="148" width="120" height="48" fill="#F2BFA0" opacity=".7"/>
+  <path d="M120 154 v36 M112 162 l8 -8 8 8 M112 182 l8 8 8 -8" fill="none" stroke="#262B0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="268" font-family="Arial, sans-serif" font-size="15" fill="#464F23" text-anchor="middle">margin: espacio</text>
+  <text x="120" y="286" font-family="Arial, sans-serif" font-size="15" fill="#464F23" text-anchor="middle">por FUERA</text>
+
+</svg>
