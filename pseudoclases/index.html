@@ -63,61 +63,206 @@
             </div>
         </section>
 
-        <!-- 4. CUADRÍCULA: 6 columnas x 3 filas = 18 celdas -->
-        <section class="row g-0 ">
-            <div class="celda col-6 col-md-4 col-xl-2">
-                1
+        <!-- 4. CUADRÍCULA: 18 tarjetas, una pseudoclase en cada una -->
+        <!-- celular: 2 por fila | tablet: 3 por fila | escritorio: 6 por fila -->
+        <section class="row g-3 px-1 pb-5 cuadricula">
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-hover" tabindex="0">
+                    <span class="celda-num">01</span>
+                    <h3 class="celda-nombre">:hover</h3>
+                    <div class="demo"><button type="button" class="d-btn d-hover">Pásame</button></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse por el botón</p>
+                        <p class="celda-texto">Se activa cuando pasas el mouse por encima del elemento.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                2
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-active" tabindex="0">
+                    <span class="celda-num">02</span>
+                    <h3 class="celda-nombre">:active</h3>
+                    <div class="demo"><button type="button" class="d-btn d-active">Presióname</button></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Mantén presionado el botón</p>
+                        <p class="celda-texto">Se activa mientras mantienes presionado el clic sobre el elemento.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                3
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-focus" tabindex="0">
+                    <span class="celda-num">03</span>
+                    <h3 class="celda-nombre">:focus</h3>
+                    <div class="demo"><input type="text" class="d-input d-focus" placeholder="Haz clic aquí" aria-label="Campo de ejemplo para :focus"></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Haz clic en el campo</p>
+                        <p class="celda-texto">Se activa cuando el elemento recibe el foco, como un campo al hacer clic.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                4
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-focus-visible" tabindex="0">
+                    <span class="celda-num">04</span>
+                    <h3 class="celda-nombre">:focus-visible</h3>
+                    <div class="demo"><button type="button" class="d-btn d-fv">Usa Tab</button></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Llega al botón con la tecla Tab</p>
+                        <p class="celda-texto">Muestra el anillo de foco solo cuando navegas con el teclado.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                5
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-focus-within" tabindex="0">
+                    <span class="celda-num">05</span>
+                    <h3 class="celda-nombre">:focus-within</h3>
+                    <div class="demo"><div class="d-fw"><input type="text" class="d-input" placeholder="Escribe" aria-label="Campo de ejemplo para :focus-within"></div></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Haz clic en el campo</p>
+                        <p class="celda-texto">Le da estilo al contenedor cuando algo dentro de él tiene el foco.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                6
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-visited" tabindex="0">
+                    <span class="celda-num">06</span>
+                    <h3 class="celda-nombre">:visited</h3>
+                    <div class="demo"><a href="#c-visited" class="d-link">Visítame</a></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Haz clic en el enlace</p>
+                        <p class="celda-texto">Cambia el color de los enlaces que ya visitaste.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                7
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-checked" tabindex="0">
+                    <span class="celda-num">07</span>
+                    <h3 class="celda-nombre">:checked</h3>
+                    <div class="demo"><label class="d-switch"><input type="checkbox" aria-label="Interruptor de ejemplo para :checked"><span></span></label></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Activa el interruptor</p>
+                        <p class="celda-texto">Se activa cuando un checkbox, radio o interruptor está marcado.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                8
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-disabled" tabindex="0">
+                    <span class="celda-num">08</span>
+                    <h3 class="celda-nombre">:disabled</h3>
+                    <div class="demo"><div class="d-par"><button type="button" class="d-chip">Sí</button><button type="button" class="d-chip" disabled>No</button></div></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Intenta presionar los dos</p>
+                        <p class="celda-texto">Estiliza los elementos desactivados que no se pueden usar.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                9
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-required" tabindex="0">
+                    <span class="celda-num">09</span>
+                    <h3 class="celda-nombre">:required</h3>
+                    <div class="demo"><input type="text" class="d-input d-req" placeholder="Nombre" required aria-label="Campo obligatorio de ejemplo"></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Mira el borde del campo</p>
+                        <p class="celda-texto">Marca los campos de un formulario que son obligatorios.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                10
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-invalid" tabindex="0">
+                    <span class="celda-num">10</span>
+                    <h3 class="celda-nombre">:invalid</h3>
+                    <div class="demo"><input type="email" class="d-input d-invalid" placeholder="tu@correo.com" aria-label="Correo de ejemplo para :invalid"></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Escribe un correo sin @</p>
+                        <p class="celda-texto">Se activa cuando el dato no es válido, como un correo sin @.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                11
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-placeholder-shown" tabindex="0">
+                    <span class="celda-num">11</span>
+                    <h3 class="celda-nombre">:placeholder-shown</h3>
+                    <div class="demo"><input type="text" class="d-input d-ph" placeholder="Escribe algo" aria-label="Campo de ejemplo para :placeholder-shown"></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Escribe y mira el fondo</p>
+                        <p class="celda-texto">Se activa mientras el campo está vacío y muestra su texto guía.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                12
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-first-child" tabindex="0">
+                    <span class="celda-num">12</span>
+                    <h3 class="celda-nombre">:first-child</h3>
+                    <div class="demo"><ul class="d-puntos d-first"><li></li><li></li><li></li><li></li></ul></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse o toca</p>
+                        <p class="celda-texto">Selecciona el primer hijo dentro de su contenedor.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                13
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-last-child" tabindex="0">
+                    <span class="celda-num">13</span>
+                    <h3 class="celda-nombre">:last-child</h3>
+                    <div class="demo"><ul class="d-puntos d-last"><li></li><li></li><li></li><li></li></ul></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse o toca</p>
+                        <p class="celda-texto">Selecciona el último hijo dentro de su contenedor.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                14
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-nth-child" tabindex="0">
+                    <span class="celda-num">14</span>
+                    <h3 class="celda-nombre">:nth-child()</h3>
+                    <div class="demo"><ul class="d-puntos d-nth"><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse o toca</p>
+                        <p class="celda-texto">Elige hijos por posición: 2n son los pares y odd los impares.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                15
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-not" tabindex="0">
+                    <span class="celda-num">15</span>
+                    <h3 class="celda-nombre">:not()</h3>
+                    <div class="demo"><ul class="d-puntos d-not"><li></li><li></li><li class="fuera"></li><li></li><li></li></ul></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse o toca</p>
+                        <p class="celda-texto">Selecciona todos los elementos excepto el que indicas entre paréntesis.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                16
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-empty" tabindex="0">
+                    <span class="celda-num">16</span>
+                    <h3 class="celda-nombre">:empty</h3>
+                    <div class="demo"><div class="d-cajas"><div>A</div><div></div><div>C</div></div></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Pasa el mouse o toca</p>
+                        <p class="celda-texto">Selecciona los elementos que no tienen nada adentro, ni texto.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                17
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-target" tabindex="0">
+                    <span class="celda-num">17</span>
+                    <h3 class="celda-nombre">:target</h3>
+                    <div class="demo"><div class="d-par"><a href="#t-meta" class="d-chip">Apuntar</a><span id="t-meta" class="d-meta"></span></div></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Haz clic en apuntar</p>
+                        <p class="celda-texto">Se activa en el elemento cuyo id coincide con el # de la URL.</p>
+                    </div>
+                </article>
             </div>
-            <div class="celda col-6 col-md-4 col-xl-2">
-                18
+            <div class="col-6 col-md-4 col-xl-2">
+                <article class="celda" id="c-has" tabindex="0">
+                    <span class="celda-num">18</span>
+                    <h3 class="celda-nombre">:has()</h3>
+                    <div class="demo"><label class="d-has"><input type="checkbox"> Elegir</label></div>
+                    <div class="celda-info">
+                        <p class="celda-pista">Marca la casilla</p>
+                        <p class="celda-texto">Estiliza al padre según lo que tiene adentro, como una casilla marcada.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
