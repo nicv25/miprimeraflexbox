@@ -1,0 +1,339 @@
+/* =========================================================
+   NIVELES DE ESPECIFICIDAD - estilos propios
+   Formato "marcador deportivo".
+   Mezcla de colores: pastel (Pseudoclases) + oliva (Estructura y sintaxis).
+   Bootstrap acomoda (row, col, d-flex, gap); aquí va la apariencia.
+
+   Índice:
+   1. Colores y tipografías
+   2. Banner
+   3. Presentación
+   4. Fichas de colores (ids, clases, etiquetas)
+   5. Tablero del marcador
+   6. Lista de selectores
+   7. Reglas del juego
+   8. Responsive
+   ========================================================= */
+
+
+/* ---------- 1. COLORES Y TIPOGRAFÍAS ---------- */
+
+:root {
+    /* oliva (Estructura y sintaxis) */
+    --noche: #262B0A;
+    --oliva-oscuro: #464F23;
+    --oliva: #96A84A;
+    --oliva-claro: #BBC97D;
+    --lima: #D8EB67;
+    /* pastel (Pseudoclases) */
+    --marfil: #F4EFE8;
+    --crema: #FBF8F3;
+    --rosa: #F3C9CF;
+    --cielo: #C9D8EE;
+    --miel: #F7DDB0;
+    --arena: #C9BDAF;
+    /* texto y detalles */
+    --texto: #3F4A41;
+    --texto-suave: #7C8579;
+    --sombra: 0 10px 28px rgba(70, 79, 35, .16);
+    --radio: 24px;
+}
+
+body {
+    background-color: var(--marfil);
+    color: var(--texto);
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Quicksand', 'Nunito', sans-serif;
+}
+
+/* Etiqueta pequeña que va encima de cada bloque: "01. ¿QUÉ ES?" */
+.etiqueta {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .3em;
+    color: var(--texto-suave);
+}
+
+
+/* ---------- 2. BANNER ---------- */
+
+.banner {
+    height: 400px;
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: var(--radio);
+    background: var(--crema) url("img/banner-especificidad.svg") center / cover no-repeat;
+    box-shadow: var(--sombra);
+}
+
+.banner-titulo {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(2rem, 6vw, 4.2rem);
+    letter-spacing: .18em;
+    color: var(--oliva-oscuro);
+}
+
+.banner-subtitulo {
+    margin: 12px 0 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: clamp(.75rem, 1.6vw, 1rem);
+    letter-spacing: .5em;
+    color: var(--texto-suave);
+}
+
+
+/* ---------- 3. PRESENTACIÓN ---------- */
+
+.titulo-principal {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--oliva-oscuro);
+}
+
+.presentacion p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.imagen {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+/* ---------- 4. FICHAS DE COLORES ---------- */
+/* Cada parte de un selector se pinta según la columna donde suma */
+
+.ficha {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--noche);
+}
+
+.ficha-id { background-color: var(--rosa); }
+.ficha-clase { background-color: var(--lima); }
+.ficha-etiqueta { background-color: var(--cielo); }
+.ficha-universal { background-color: var(--arena); }
+
+
+/* ---------- 5. TABLERO DEL MARCADOR ---------- */
+
+/* La columna se queda visible mientras bajas por la lista */
+.tablero-columna {
+    position: sticky;
+    top: 8px;
+    z-index: 2;
+    align-self: flex-start;
+}
+
+.tablero {
+    padding: 24px;
+    border-radius: var(--radio);
+    background-color: var(--noche);
+    box-shadow: var(--sombra);
+    text-align: center;
+    color: var(--marfil);
+}
+
+.tablero-titulo {
+    margin: 0 0 6px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    letter-spacing: .5em;
+    color: var(--oliva-claro);
+}
+
+.tablero-selector {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: var(--lima);
+}
+
+.columna {
+    padding: 16px 8px;
+    border-radius: 18px;
+    background-color: var(--oliva-oscuro);
+    border-top: 6px solid;
+}
+
+.columna-id { border-color: var(--rosa); }
+.columna-clase { border-color: var(--lima); }
+.columna-etiqueta { border-color: var(--cielo); }
+
+/* Números grandes como los de un marcador */
+.numero {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    line-height: 1;
+}
+
+.columna-id .numero { color: var(--rosa); }
+.columna-clase .numero { color: var(--lima); }
+.columna-etiqueta .numero { color: var(--cielo); }
+
+.columna-nombre {
+    font-size: .8rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--oliva-claro);
+}
+
+.tablero-texto {
+    min-height: 3em;
+    margin: 16px 0 0;
+    font-size: .95rem;
+}
+
+
+/* ---------- 6. LISTA DE SELECTORES ---------- */
+
+/* Cada fila es un botón: así funciona con mouse, teclado y toque */
+.fila {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 12px;
+    align-items: center;
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    background-color: var(--crema);
+    box-shadow: var(--sombra);
+    text-align: left;
+    color: var(--texto);
+    transition: transform .2s, border-color .2s, background-color .2s;
+}
+
+.fila-fichas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.fila-puntos {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--oliva-oscuro);
+}
+
+/* La explicación ocupa toda la fila de abajo */
+.fila-texto {
+    grid-column: 1 / -1;
+    font-size: .88rem;
+    color: var(--texto-suave);
+}
+
+.fila:hover,
+.fila:focus-visible,
+.fila.activa {
+    transform: translateX(6px);
+    border-color: var(--oliva);
+    background-color: #F1F5E1;
+    outline: none;
+}
+
+
+/* ---------- 7. REGLAS DEL JUEGO ---------- */
+
+.regla {
+    height: 100%;
+    padding: 22px;
+    border-radius: var(--radio);
+    background-color: var(--crema);
+    box-shadow: var(--sombra);
+}
+
+.regla-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: var(--oliva-claro);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--noche);
+}
+
+.regla h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--oliva-oscuro);
+}
+
+.regla p {
+    font-size: .95rem;
+}
+
+.regla code {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: var(--noche);
+    color: var(--lima);
+}
+
+/* La regla de !important va en rosa como advertencia */
+.regla-alerta {
+    background-color: #FCEEF0;
+}
+
+.regla-alerta .regla-num {
+    background-color: var(--rosa);
+}
+
+
+/* ---------- 8. RESPONSIVE ---------- */
+
+/* Celular (menos de 768px): banner más bajito y tablero más compacto */
+@media (max-width: 767px) {
+    .banner {
+        height: 280px;
+    }
+
+    .tablero {
+        padding: 12px;
+    }
+
+    .tablero-selector {
+        margin-bottom: 8px;
+    }
+
+    .tablero-texto {
+        display: none;
+        /* en celular la explicación ya se lee en la fila */
+    }
+
+    .columna {
+        padding: 8px 4px;
+    }
+}
+
+/* Escritorio (1200px o más): imagen más grande */
+@media (min-width: 1200px) {
+    .imagen {
+        height: 350px;
+    }
+}

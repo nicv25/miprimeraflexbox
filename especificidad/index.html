@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niveles de especificidad</title>
+
+    <!-- Bootstrap 5.3.8 (la misma versión de todo el sitio) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Tipografías: Quicksand (títulos redondos) y Nunito (texto relajado) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Nuestro CSS va DESPUÉS de Bootstrap -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Menú compartido con las demás secciones -->
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body>
+
+    <!-- MENÚ (igual en todas las páginas; estilos en css/menu.css) -->
+    <!-- celular y tablet: botón hamburguesa | escritorio: botones en fila -->
+    <nav class="navbar navbar-expand-xl menu" data-bs-theme="dark">
+        <a class="navbar-brand menu-marca" href="../index.html">CSS FÁCIL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <div class="navbar-nav ms-auto gap-2">
+                <a class="nav-link" href="../index.html">
+                    <img src="../img/icono-estructura.svg" alt="" class="menu-icono">Estructura y sintaxis
+                </a>
+                <a class="nav-link active" aria-current="page" href="index.html">
+                    <img src="../img/icono-especificidad.svg" alt="" class="menu-icono">Niveles de especificidad
+                </a>
+                <a class="nav-link" href="../pseudoclases/index.html">
+                    <img src="../img/icono-pseudoclases.svg" alt="" class="menu-icono">Pseudoclases y elementos
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="../img/icono-boxmodel.svg" alt="" class="menu-icono">Box model
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- .container-fluid: ocupa todo el ancho de la pantalla con un pequeño margen a los lados -->
+    <div class="container-fluid">
+
+        <!-- 1. BANNER: ilustración de fondo + título encima -->
+        <header class="banner d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="banner-titulo">ESPECIFICIDAD</h1>
+            <p class="banner-subtitulo">¿QUIÉN GANA EN CSS?</p>
+        </header>
+
+        <!-- 2. PRESENTACIÓN: texto | imagen -->
+        <section class="row row-cols-1 row-cols-xl-2 p-4 p-md-5 align-items-center presentacion">
+            <div class="col">
+                <span class="etiqueta">01. ¿QUÉ ES?</span>
+                <h2 class="titulo-principal">Especificidad: el marcador de CSS</h2>
+                <p>Cuando dos reglas le dan estilos distintos al mismo elemento, el navegador tiene que decidir cuál
+                    gana. Para eso le da a cada selector un <strong>puntaje de tres números</strong>, como el marcador
+                    de un partido: <span class="ficha ficha-id">ids</span> · <span class="ficha ficha-clase">clases</span>
+                    · <span class="ficha ficha-etiqueta">etiquetas</span>.</p>
+                <p>Se comparan de <strong>izquierda a derecha</strong>: un solo id le gana a cualquier cantidad de
+                    clases, y una sola clase le gana a cualquier cantidad de etiquetas. Abajo puedes probar el
+                    marcador con 10 selectores.</p>
+            </div>
+            <div class="col d-block d-md-none d-xl-block">
+                <img src="img/como-se-lee.svg" class="imagen"
+                    alt="Cómo se lee la especificidad: el selector #menu .boton:hover a vale 1 id, 2 clases y 1 etiqueta, es decir 1 · 2 · 1">
+            </div>
+        </section>
+
+        <!-- 3. MARCADOR: tablero (izquierda) + selectores para probar (derecha) -->
+        <section class="row g-4 px-1 pb-5">
+            <!-- La columna del tablero se queda pegada arriba mientras bajas por la lista (position: sticky) -->
+            <div class="col-12 col-xl-5 tablero-columna">
+                <div class="tablero" aria-live="polite">
+                    <p class="tablero-titulo">MARCADOR</p>
+                    <code class="tablero-selector" id="selectorActual">Elige un selector</code>
+                    <div class="row g-2 g-md-3">
+                        <div class="col-4">
+                            <div class="columna columna-id">
+                                <span class="numero" id="numeroId">0</span>
+                                <span class="columna-nombre">ids</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="columna columna-clase">
+                                <span class="numero" id="numeroClase">0</span>
+                                <span class="columna-nombre">clases</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="columna columna-etiqueta">
+                                <span class="numero" id="numeroEtiqueta">0</span>
+                                <span class="columna-nombre">etiquetas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tablero-texto" id="textoActual">Pasa el mouse o toca un selector de la lista para ver
+                        su puntaje.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-7">
+                <span class="etiqueta">02. PRUEBA EL MARCADOR</span>
+                <div class="lista d-flex flex-column gap-2">
+                    <button type="button" class="fila" data-selector="p" data-id="0" data-clase="0" data-etiqueta="1">
+                        <span class="fila-fichas"><span class="ficha ficha-etiqueta">p</span></span>
+                        <span class="fila-puntos">0 · 0 · 1</span>
+                        <span class="fila-texto">Una etiqueta suma 1 en la columna de etiquetas.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="*" data-id="0" data-clase="0" data-etiqueta="0">
+                        <span class="fila-fichas"><span class="ficha ficha-universal">*</span></span>
+                        <span class="fila-puntos">0 · 0 · 0</span>
+                        <span class="fila-texto">El selector universal no suma nada: es el más débil.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="ul li" data-id="0" data-clase="0" data-etiqueta="2">
+                        <span class="fila-fichas"><span class="ficha ficha-etiqueta">ul</span><span class="ficha ficha-etiqueta">li</span></span>
+                        <span class="fila-puntos">0 · 0 · 2</span>
+                        <span class="fila-texto">Cada etiqueta suma, pero nunca alcanza a una clase.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector=".boton" data-id="0" data-clase="1" data-etiqueta="0">
+                        <span class="fila-fichas"><span class="ficha ficha-clase">.boton</span></span>
+                        <span class="fila-puntos">0 · 1 · 0</span>
+                        <span class="fila-texto">Una clase vale más que cualquier cantidad de etiquetas.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="a:hover" data-id="0" data-clase="1" data-etiqueta="1">
+                        <span class="fila-fichas"><span class="ficha ficha-etiqueta">a</span><span class="ficha ficha-clase">:hover</span></span>
+                        <span class="fila-puntos">0 · 1 · 1</span>
+                        <span class="fila-texto">Las pseudoclases cuentan igual que una clase.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="p::first-line" data-id="0" data-clase="0" data-etiqueta="2">
+                        <span class="fila-fichas"><span class="ficha ficha-etiqueta">p</span><span class="ficha ficha-etiqueta">::first-line</span></span>
+                        <span class="fila-puntos">0 · 0 · 2</span>
+                        <span class="fila-texto">Los pseudoelementos cuentan igual que una etiqueta.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector=".menu .boton.activo" data-id="0" data-clase="3" data-etiqueta="0">
+                        <span class="fila-fichas"><span class="ficha ficha-clase">.menu</span><span class="ficha ficha-clase">.boton</span><span class="ficha ficha-clase">.activo</span></span>
+                        <span class="fila-puntos">0 · 3 · 0</span>
+                        <span class="fila-texto">Tres clases juntas: 3 puntos en la columna del medio.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="#titulo" data-id="1" data-clase="0" data-etiqueta="0">
+                        <span class="fila-fichas"><span class="ficha ficha-id">#titulo</span></span>
+                        <span class="fila-puntos">1 · 0 · 0</span>
+                        <span class="fila-texto">Un id gana a cualquier cantidad de clases y etiquetas.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="#menu .boton:hover" data-id="1" data-clase="2" data-etiqueta="0">
+                        <span class="fila-fichas"><span class="ficha ficha-id">#menu</span><span class="ficha ficha-clase">.boton</span><span class="ficha ficha-clase">:hover</span></span>
+                        <span class="fila-puntos">1 · 2 · 0</span>
+                        <span class="fila-texto">Un id más dos clases: compite en la liga más alta.</span>
+                    </button>
+                    <button type="button" class="fila" data-selector="nav#principal li.activo" data-id="1" data-clase="1" data-etiqueta="2">
+                        <span class="fila-fichas"><span class="ficha ficha-etiqueta">nav</span><span class="ficha ficha-id">#principal</span><span class="ficha ficha-etiqueta">li</span><span class="ficha ficha-clase">.activo</span></span>
+                        <span class="fila-puntos">1 · 1 · 2</span>
+                        <span class="fila-texto">Se cuenta cada parte por separado y se suman por columna.</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. REGLAS DEL JUEGO: 4 tarjetas -->
+        <section class="pb-5">
+            <span class="etiqueta">03. REGLAS DEL JUEGO</span>
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-xl-3">
+                    <article class="regla">
+                        <span class="regla-num">1</span>
+                        <h3>Izquierda a derecha</h3>
+                        <p>Se compara primero la columna de ids; solo si empatan se mira la de clases, y luego la de
+                            etiquetas.</p>
+                        <code>1 · 0 · 0 &gt; 0 · 9 · 9</code>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                    <article class="regla">
+                        <span class="regla-num">2</span>
+                        <h3>Empate: gana la última</h3>
+                        <p>Si dos selectores tienen el mismo puntaje, gana la regla que está más abajo en el CSS.</p>
+                        <code>.a { } .b { } → gana .b</code>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                    <article class="regla">
+                        <span class="regla-num">3</span>
+                        <h3>Estilo en línea</h3>
+                        <p>Lo que escribes en el atributo <code>style=""</code> del HTML le gana a cualquier
+                            selector del archivo CSS.</p>
+                        <code>&lt;p style="color: red"&gt;</code>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3">
+                    <article class="regla regla-alerta">
+                        <span class="regla-num">4</span>
+                        <h3>!important: úsalo poco</h3>
+                        <p>Pasa por encima de todo el marcador. Sirve en emergencias, pero vuelve el CSS difícil de
+                            arreglar.</p>
+                        <code>color: red !important;</code>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap: el JavaScript que hace funcionar el botón hamburguesa -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!-- Nuestro JavaScript: pasa el puntaje de cada selector al marcador -->
+    <script src="marcador.js"></script>
+</body>
+
+</html>
