@@ -1,14 +1,132 @@
 /* Bootstrap hace casi todo. Aquí solo van los ajustes que él no trae. */
 
-/* Alturas de las cajas */
+/* Paleta pastel (inspirada en la referencia "Calm kit") */
+:root {
+    --salvia: #6B7F6E;
+    --salvia-oscuro: #4A5A4D;
+    --musgo: #A7B8A7;
+    --niebla: #D9E1D9;
+    --marfil: #F4EFE8;
+    --crema: #FBF8F3;
+    --arena: #C9BDAF;
+    --rosa: #F3C9CF;
+    --durazno: #F2BFA0;
+    --cielo: #C9D8EE;
+    --lila: #B9A6E0;
+    --miel: #F7DDB0;
+    --texto: #3F4A41;
+    --texto-suave: #7C8579;
+    --sombra: 0 10px 28px rgba(138, 127, 112, .16);
+    --radio: 24px;
+}
+
+body {
+    background-color: var(--marfil);
+    color: var(--texto);
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+/* Títulos redondos */
+h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
+@media (max-width: 767px) {
+    .banner {
+        height: 280px;
+    }
+}
+
+.banner-titulo {
+    font-family: 'Quicksand', 'Nunito', sans-serif;
+}
+
+/* Menú */
+.menu {
+    background-color: var(--salvia);
+    border-radius: 0 0 var(--radio) var(--radio);
+}
+
+.menu .nav-link {
+    color: var(--marfil);
+    border-radius: 999px;
+    transition: background-color .25s;
+}
+
+/* Pseudo clase :hover -> al pasar el mouse */
+.menu .nav-link:hover,
+.menu .nav-link.active {
+    background-color: var(--musgo);
+    color: var(--salvia-oscuro);
+}
+
+/* Banner */
 .banner {
     height: 400px;
+    margin: 16px 0;
+    border-radius: var(--radio);
+    background: var(--crema) url("img/banner-pseudoclases.svg") center / cover no-repeat;
+    box-shadow: var(--sombra);
+    padding: 16px;
+}
+
+/* Celular (menos de 768px): banner más bajito */
+@media (max-width: 767px) {
+    .banner {
+        height: 280px;
+    }
+}
+
+.banner-titulo {
+    font-weight: 500;
+    font-size: clamp(2rem, 6vw, 4.2rem);
+    letter-spacing: .18em;
+    color: var(--salvia-oscuro);
+    margin: 0;
+}
+
+.banner-subtitulo {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: clamp(.75rem, 1.6vw, 1rem);
+    letter-spacing: .5em;
+    color: var(--texto-suave);
+    margin: 12px 0 0;
+}
+
+/* Presentación */
+.etiqueta {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .3em;
+    color: var(--texto-suave);
+    margin-bottom: 8px;
+}
+
+.titulo-principal {
+    font-weight: 700;
+    color: var(--salvia-oscuro);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin-bottom: 16px;
+}
+
+.presentacion p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.presentacion code {
+    background-color: var(--rosa);
+    color: #8E4A55;
+    padding: 2px 8px;
+    border-radius: 8px;
 }
 
 /* Celular y tablet (menos de 1200px): la imagen queda debajo del texto */
 /* Por defecto Bootstrap ya la apila, así que solo ajustamos su tamaño */
 .imagen {
+    display: block;
+    width: 100%;
     height: 250px;
+    object-fit: contain;
 }
 
 /* Escritorio (1200px en adelante): la imagen queda al lado del texto */
@@ -26,11 +144,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-
-/* Pseudo clase :hover -> al pasar el mouse */
-.nav-link:hover {
-    background-color: #1abc9c;
 }
