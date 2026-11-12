@@ -1,6 +1,23 @@
-/* Bootstrap hace casi todo. Aquí solo van los ajustes que él no trae. */
+/* =========================================================
+   PSEUDOCLASES - estilos propios
+   Bootstrap se encarga de la cuadrícula, el menú y de acomodar
+   (d-flex, gap-2, col-...). Aquí solo va lo que Bootstrap no trae:
+   colores, tipografías, tarjetas y las demostraciones.
 
-/* Paleta pastel (inspirada en la referencia "Calm kit") */
+   Índice:
+   1. Colores y tipografías
+   2. Menú
+   3. Banner
+   4. Presentación (título, texto e imagen)
+   5. Tarjetas de la cuadrícula
+   6. Demostraciones (01 a 18)
+   7. Responsive (celular y tablet)
+   ========================================================= */
+
+
+/* ---------- 1. COLORES Y TIPOGRAFÍAS ---------- */
+
+/* Paleta pastel: se escribe una vez y se usa con var(--nombre) */
 :root {
     --salvia: #6B7F6E;
     --salvia-oscuro: #4A5A4D;
@@ -10,6 +27,7 @@
     --crema: #FBF8F3;
     --arena: #C9BDAF;
     --rosa: #F3C9CF;
+    --rosa-fuerte: #E8A9B1;
     --durazno: #F2BFA0;
     --cielo: #C9D8EE;
     --lila: #B9A6E0;
@@ -26,19 +44,16 @@ body {
     font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
-/* Títulos redondos */
-h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
-@media (max-width: 767px) {
-    .banner {
-        height: 280px;
-    }
-}
-
-.banner-titulo {
+/* Títulos con letra redonda */
+h1,
+h2,
+h3 {
     font-family: 'Quicksand', 'Nunito', sans-serif;
 }
 
-/* Menú */
+
+/* ---------- 2. MENÚ ---------- */
+
 .menu {
     background-color: var(--salvia);
     border-radius: 0 0 var(--radio) var(--radio);
@@ -50,62 +65,60 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     transition: background-color .25s;
 }
 
-/* Pseudo clase :hover -> al pasar el mouse */
+/* :hover -> al pasar el mouse | .active -> la sección en la que estás */
 .menu .nav-link:hover,
 .menu .nav-link.active {
     background-color: var(--musgo);
     color: var(--salvia-oscuro);
 }
 
-/* Banner */
+
+/* ---------- 3. BANNER ---------- */
+
 .banner {
     height: 400px;
     margin: 16px 0;
+    padding: 16px;
     border-radius: var(--radio);
     background: var(--crema) url("img/banner-pseudoclases.svg") center / cover no-repeat;
     box-shadow: var(--sombra);
-    padding: 16px;
-}
-
-/* Celular (menos de 768px): banner más bajito */
-@media (max-width: 767px) {
-    .banner {
-        height: 280px;
-    }
 }
 
 .banner-titulo {
+    margin: 0;
     font-weight: 500;
     font-size: clamp(2rem, 6vw, 4.2rem);
+    /* clamp(mínimo, ideal, máximo) */
     letter-spacing: .18em;
     color: var(--salvia-oscuro);
-    margin: 0;
 }
 
 .banner-subtitulo {
+    margin: 12px 0 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: clamp(.75rem, 1.6vw, 1rem);
     letter-spacing: .5em;
     color: var(--texto-suave);
-    margin: 12px 0 0;
 }
 
-/* Presentación */
+
+/* ---------- 4. PRESENTACIÓN ---------- */
+
 .etiqueta {
+    margin-bottom: 8px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: .8rem;
     letter-spacing: .3em;
     color: var(--texto-suave);
-    margin-bottom: 8px;
 }
 
 .titulo-principal {
-    font-weight: 700;
-    color: var(--salvia-oscuro);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
     margin-bottom: 16px;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    color: var(--salvia-oscuro);
 }
 
 .presentacion p {
@@ -114,14 +127,13 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 }
 
 .presentacion code {
-    background-color: var(--rosa);
-    color: #8E4A55;
     padding: 2px 8px;
     border-radius: 8px;
+    background-color: var(--rosa);
+    color: #8E4A55;
 }
 
-/* Celular y tablet (menos de 1200px): la imagen queda debajo del texto */
-/* Por defecto Bootstrap ya la apila, así que solo ajustamos su tamaño */
+/* La imagen se ajusta a su caja sin deformarse */
 .imagen {
     display: block;
     width: 100%;
@@ -129,16 +141,10 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     object-fit: contain;
 }
 
-/* Escritorio (1200px en adelante): la imagen queda al lado del texto */
-@media (min-width: 1200px) {
-    .imagen {
-        height: 350px;
-    }
-}
 
-/* ============ CUADRÍCULA DE PSEUDOCLASES ============ */
+/* ---------- 5. TARJETAS DE LA CUADRÍCULA ---------- */
 
-/* Color de acento de cada tarjeta, repartido con :nth-child() */
+/* Cada tarjeta toma un color de acento según su posición (:nth-child) */
 .cuadricula > div:nth-child(6n+1) { --acento: var(--rosa); }
 .cuadricula > div:nth-child(6n+2) { --acento: var(--durazno); }
 .cuadricula > div:nth-child(6n+3) { --acento: var(--miel); }
@@ -146,9 +152,7 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 .cuadricula > div:nth-child(6n+5) { --acento: var(--cielo); }
 .cuadricula > div:nth-child(6n+6) { --acento: var(--lila); }
 
-/* Cada celda (tarjeta) de la cuadrícula */
 .celda {
-    position: relative;
     height: 250px;
     padding: 16px;
     border-radius: var(--radio);
@@ -158,8 +162,8 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform .3s, box-shadow .3s;
     outline: none;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .celda-num {
@@ -172,18 +176,18 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 }
 
 .celda-nombre {
+    max-width: 100%;
+    margin: 4px 0 0;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background-color: var(--acento);
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--salvia-oscuro);
-    background-color: var(--acento);
-    padding: 4px 14px;
-    border-radius: 999px;
-    margin: 4px 0 0;
-    max-width: 100%;
     overflow-wrap: anywhere;
 }
 
-/* Zona de la demostración */
+/* La demostración ocupa el espacio libre del centro */
 .demo {
     flex: 1;
     width: 100%;
@@ -192,7 +196,8 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     justify-content: center;
 }
 
-/* Zona de texto: la pista y la explicación ocupan el mismo lugar */
+/* La pista y la explicación están una encima de la otra;
+   cuando la tarjeta se activa, se cambia una por la otra */
 .celda-info {
     position: relative;
     width: 100%;
@@ -212,47 +217,49 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 }
 
 .celda-pista {
-    color: var(--texto-suave);
     font-style: italic;
+    color: var(--texto-suave);
 }
 
 .celda-texto {
     opacity: 0;
     transform: translateY(8px);
-    color: var(--texto);
 }
 
-/* Tarjeta ACTIVA: con el mouse (:hover) o al tocarla / usarla (:focus-within) */
-.celda:hover,
-.celda:focus-within {
+/* TARJETA ACTIVA
+   :hover        -> con el mouse encima (computador)
+   :focus-within -> al tocarla o usar algo de adentro (celular y teclado)
+   :is(A, B) es una forma corta de escribir "A o B" */
+.celda:is(:hover, :focus-within) {
     transform: translateY(-6px);
     box-shadow: 0 18px 36px rgba(138, 127, 112, .26);
 }
 
-.celda:hover .celda-pista,
-.celda:focus-within .celda-pista {
+.celda:is(:hover, :focus-within) .celda-pista {
     opacity: 0;
     transform: translateY(-8px);
 }
 
-.celda:hover .celda-texto,
-.celda:focus-within .celda-texto {
+.celda:is(:hover, :focus-within) .celda-texto {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ---------- Piezas comunes de las demostraciones ---------- */
+
+/* ---------- 6. DEMOSTRACIONES ---------- */
+
+/* Piezas que se repiten: botones, chips y campos de texto */
 .d-btn,
 .d-chip {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+    padding: 8px 18px;
     border: 2px solid var(--musgo);
+    border-radius: 999px;
     background-color: var(--marfil);
     color: var(--salvia-oscuro);
-    border-radius: 999px;
-    padding: 8px 18px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     text-decoration: none;
-    transition: background-color .2s, transform .15s, box-shadow .2s;
+    transition: background-color .2s, transform .15s;
 }
 
 .d-chip {
@@ -263,23 +270,17 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 .d-input {
     width: 100%;
     max-width: 170px;
-    font-size: .85rem;
     padding: 8px 12px;
     border: 2px solid var(--niebla);
     border-radius: 14px;
     background-color: #fff;
     color: var(--texto);
+    font-size: .85rem;
     outline: none;
     transition: border-color .2s, box-shadow .2s, background-color .2s;
 }
 
-.d-par {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-/* 01 :hover */
+/* 01 :hover -> el botón se eleva y cambia de color */
 .d-hover:hover {
     background-color: var(--lila);
     border-color: var(--lila);
@@ -287,20 +288,20 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     transform: translateY(-3px);
 }
 
-/* 02 :active */
+/* 02 :active -> el botón se encoge mientras lo presionas */
 .d-active:active {
     background-color: var(--durazno);
     border-color: var(--durazno);
     transform: scale(.88);
 }
 
-/* 03 :focus */
+/* 03 :focus -> el campo se resalta al hacer clic */
 .d-focus:focus {
     border-color: var(--salvia);
     box-shadow: 0 0 0 5px var(--niebla);
 }
 
-/* 04 :focus-visible (solo con teclado) */
+/* 04 :focus-visible -> el anillo aparece solo al usar el teclado */
 .d-fv:focus {
     outline: none;
 }
@@ -311,11 +312,11 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     background-color: var(--niebla);
 }
 
-/* 05 :focus-within */
+/* 05 :focus-within -> la caja cambia cuando el campo de adentro tiene el foco */
 .d-fw {
     padding: 12px;
-    border-radius: 18px;
     border: 2px dashed var(--arena);
+    border-radius: 18px;
     transition: background-color .2s, border-color .2s;
 }
 
@@ -324,7 +325,7 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     border-color: var(--durazno);
 }
 
-/* 06 :visited (solo se puede cambiar el color) */
+/* 06 :visited -> por privacidad, solo se puede cambiar el color */
 .d-link {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
@@ -336,7 +337,7 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     color: #9A7FD0;
 }
 
-/* 07 :checked (interruptor) */
+/* 07 :checked -> interruptor hecho con un checkbox escondido */
 .d-switch {
     position: relative;
     cursor: pointer;
@@ -348,15 +349,16 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 }
 
 .d-switch span {
+    position: relative;
     display: block;
     width: 64px;
     height: 34px;
     border-radius: 999px;
     background-color: var(--niebla);
-    position: relative;
     transition: background-color .25s;
 }
 
+/* la bolita blanca del interruptor */
 .d-switch span::after {
     content: "";
     position: absolute;
@@ -383,25 +385,26 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     outline-offset: 3px;
 }
 
-/* 08 :disabled */
+/* 08 :disabled -> el botón desactivado se ve apagado */
 .d-chip:disabled {
     opacity: .4;
-    cursor: not-allowed;
     border-style: dashed;
+    cursor: not-allowed;
 }
 
 .d-chip:not(:disabled):active {
     transform: scale(.9);
 }
 
-/* 09 :required */
+/* 09 :required -> franja rosa en el campo obligatorio */
 .d-req:required {
     border-left: 8px solid var(--rosa);
 }
 
-/* 10 :invalid (solo cuando ya escribiste algo) */
+/* 10 :invalid -> rosa si el correo está mal, verde si está bien
+   (solo cuando ya se escribió algo, por eso :not(:placeholder-shown)) */
 .d-invalid:not(:placeholder-shown):invalid {
-    border-color: #E8A9B1;
+    border-color: var(--rosa-fuerte);
     background-color: #FCEEF0;
 }
 
@@ -410,21 +413,13 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     background-color: #EEF4EE;
 }
 
-/* 11 :placeholder-shown */
+/* 11 :placeholder-shown -> fondo azul mientras el campo está vacío */
 .d-ph:placeholder-shown {
     background-color: var(--cielo);
     border-color: var(--cielo);
 }
 
-/* 12 a 15: filas de puntos */
-.d-puntos {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 8px;
-}
-
+/* 12 a 15: filas de puntos (Bootstrap las pone en fila con d-flex) */
 .d-puntos li {
     width: 18px;
     height: 18px;
@@ -438,27 +433,20 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     background-color: transparent;
 }
 
-.celda:hover .d-first li:first-child,
-.celda:focus-within .d-first li:first-child,
-.celda:hover .d-last li:last-child,
-.celda:focus-within .d-last li:last-child,
-.celda:hover .d-nth li:nth-child(2n),
-.celda:focus-within .d-nth li:nth-child(2n),
-.celda:hover .d-not li:not(.fuera),
-.celda:focus-within .d-not li:not(.fuera) {
+/* Al activar la tarjeta, se pintan solo los puntos que elige cada pseudoclase */
+.celda:is(:hover, :focus-within) .d-first li:first-child,
+.celda:is(:hover, :focus-within) .d-last li:last-child,
+.celda:is(:hover, :focus-within) .d-nth li:nth-child(2n),
+.celda:is(:hover, :focus-within) .d-not li:not(.fuera) {
     background-color: var(--salvia);
     transform: scale(1.3);
 }
 
-/* 16 :empty */
-.d-cajas {
-    display: flex;
-    gap: 8px;
-}
-
+/* 16 :empty -> la caja vacía queda con borde punteado */
 .d-cajas div {
     width: 36px;
     height: 36px;
+    border: 2px solid transparent;
     border-radius: 10px;
     background-color: var(--niebla);
     display: flex;
@@ -467,25 +455,24 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     color: var(--salvia-oscuro);
-    border: 2px solid transparent;
     transition: background-color .3s, border-color .3s;
 }
 
-.celda:hover .d-cajas div:empty,
-.celda:focus-within .d-cajas div:empty {
+.celda:is(:hover, :focus-within) .d-cajas div:empty {
+    border: 2px dashed var(--rosa-fuerte);
     background-color: transparent;
-    border: 2px dashed #E8A9B1;
 }
 
-/* 17 :target */
+/* 17 :target -> la diana se ilumina cuando la URL termina en #t-meta */
 .d-meta {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
     border: 3px solid var(--arena);
+    border-radius: 50%;
     background: radial-gradient(circle, var(--arena) 0 4px, transparent 5px);
-    transition: transform .3s, background-color .3s, border-color .3s;
     scroll-margin-top: 50vh;
+    /* al saltar al #, la deja en medio de la pantalla */
+    transition: transform .3s, background-color .3s, border-color .3s;
 }
 
 .d-meta:target {
@@ -494,14 +481,11 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     transform: scale(1.3);
 }
 
-/* 18 :has() */
+/* 18 :has() -> la caja cambia si TIENE una casilla marcada adentro */
 .d-has {
-    display: flex;
-    gap: 8px;
-    align-items: center;
     padding: 10px 16px;
-    border-radius: 16px;
     border: 2px solid var(--niebla);
+    border-radius: 16px;
     background-color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -509,9 +493,9 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
 }
 
 .d-has input {
-    accent-color: var(--salvia);
     width: 18px;
     height: 18px;
+    accent-color: var(--salvia);
 }
 
 .d-has:has(input:checked) {
@@ -519,24 +503,41 @@ h1, h2, h3, /* Celular (menos de 768px): banner más bajito */
     border-color: var(--salvia);
 }
 
-/* Tablet en adelante: un poco más de aire en las tarjetas */
+
+/* ---------- 7. RESPONSIVE ---------- */
+
+/* Celular muy angosto (menos de 400px): textos más pequeños */
+@media (max-width: 399px) {
+    .celda {
+        padding: 12px;
+    }
+
+    .celda-nombre {
+        font-size: .95rem;
+    }
+
+    .celda-info p {
+        font-size: .76rem;
+    }
+}
+
+/* Celular (menos de 768px): banner más bajito */
+@media (max-width: 767px) {
+    .banner {
+        height: 280px;
+    }
+}
+
+/* Tablet en adelante (768px o más): tarjetas un poco más altas */
 @media (min-width: 768px) {
     .celda {
         height: 260px;
     }
 }
 
-/* Celular muy angosto: textos un poco más pequeños */
-@media (max-width: 400px) {
-    .celda {
-        padding: 12px;
-    }
-
-    .celda-info p {
-        font-size: .76rem;
-    }
-
-    .celda-nombre {
-        font-size: .95rem;
+/* Escritorio (1200px o más): la imagen queda al lado del texto y crece */
+@media (min-width: 1200px) {
+    .imagen {
+        height: 350px;
     }
 }
