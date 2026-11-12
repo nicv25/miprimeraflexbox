@@ -1,0 +1,36 @@
+/* Bootstrap hace casi todo. Aquí solo van los ajustes que él no trae. */
+
+/* Alturas de las cajas */
+.banner {
+    height: 400px;
+}
+
+/* Celular y tablet (menos de 1200px): la imagen queda debajo del texto */
+/* Por defecto Bootstrap ya la apila, así que solo ajustamos su tamaño */
+.imagen {
+    height: 250px;
+}
+
+/* Escritorio (1200px en adelante): la imagen queda al lado del texto */
+@media (min-width: 1200px) {
+    .imagen {
+        height: 350px;
+    }
+}
+
+/* Cada celda de la cuadrícula */
+.celda {
+    height: 100px;
+    border: 1px solid #7f8c8d;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Pseudo clase :hover -> al pasar el mouse */
+.nav-link:hover {
+    background-color: #1abc9c;
+}
