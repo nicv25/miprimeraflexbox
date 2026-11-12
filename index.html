@@ -47,6 +47,11 @@
             background-color: #858C5E;
         }
 
+        /* la caja 3 crece con el banner en tablet; su imagen no debe hacerla más alta */
+        .caja3 .ilustracion {
+            max-height: 276px;
+        }
+
         .caja4 {
             height: 300px;
             background-color: #BBC97D;
@@ -115,11 +120,15 @@
             <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 caja2">
                 <img src="img/banner-css-facil.jpg" alt="CSS fácil: aprende paso a paso, diseño web para todos" class="banner">
             </header>
-            <aside class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja3">caja 3</aside>
+            <aside class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja3 seccion-img">
+                <img src="img/css-facil-regla.svg" alt="CSS fácil: partes de una regla, selector, propiedad y valor" class="ilustracion">
+            </aside>
             <section class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja4 seccion-img">
                 <img src="img/css-facil-color.svg" alt="CSS fácil: cambia el color de un texto" class="ilustracion">
             </section>
-            <aside class="col-6 col-sm-6 col-md-10 col-lg-10 col-xl-4 col-xxl-4 caja5">caja 5</aside>
+            <aside class="col-6 col-sm-6 col-md-10 col-lg-10 col-xl-4 col-xxl-4 caja5 seccion-img">
+                <img src="img/css-facil-selectores.svg" alt="CSS fácil: tipos de selectores, etiqueta, clase e id" class="ilustracion">
+            </aside>
             <section class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-3 col-xxl-3 caja6 seccion-img">
                 <img src="img/css-facil-tamano.svg" alt="CSS fácil: cambia el tamaño de la letra" class="ilustracion">
             </section>
@@ -132,7 +141,9 @@
             <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-5 col-xxl-5 caja9 seccion-img">
                 <img src="img/css-facil-bordes.svg" alt="CSS fácil: bordes redondeados y sombras" class="ilustracion">
             </section>
-            <footer class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 caja10">caja 10</footer>
+            <footer class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 caja10 seccion-img">
+                <img src="img/css-facil-comentarios.svg" alt="CSS fácil: comentarios en CSS, notas que el navegador ignora" class="ilustracion">
+            </footer>
         </div>
 
     </div>

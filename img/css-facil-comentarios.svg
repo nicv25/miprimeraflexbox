@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="CSS fácil: comentarios en CSS">
+  <rect x="8" y="8" width="384" height="284" rx="22" fill="#ffffff"/>
+  <text x="200.0" y="52" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#262B0A" text-anchor="middle">CSS fácil</text>
+  <text x="200.0" y="80" font-family="Arial, sans-serif" font-size="16" fill="#637309" text-anchor="middle">7. Deja notas con comentarios</text>
+  <rect x="34" y="100" width="210" height="120" rx="10" fill="#262B0A"/>
+  <text x="50" y="132" font-family="Consolas, monospace" font-size="15" fill="#96A84A">/* Menú principal */</text>
+  <text x="50" y="160" font-family="Consolas, monospace" font-size="15" fill="#D8EB67">nav {</text>
+  <text x="66" y="184" font-family="Consolas, monospace" font-size="15" fill="#ffffff">color: green;</text>
+  <text x="50" y="208" font-family="Consolas, monospace" font-size="15" fill="#D8EB67">}</text>
+  <path d="M254 126 h22" stroke="#96A84A" stroke-width="4" stroke-linecap="round"/>
+  <rect x="284" y="104" width="86" height="64" rx="10" fill="#f3f6e4"/>
+  <text x="327" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#464F23" text-anchor="middle">el navegador</text>
+  <text x="327" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#464F23" text-anchor="middle">lo ignora</text>
+  <text x="200" y="256" font-family="Arial, sans-serif" font-size="15" fill="#464F23" text-anchor="middle">/* ... */ sirve para explicar tu código</text>
+</svg>
