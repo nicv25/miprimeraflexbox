@@ -7,15 +7,13 @@
     <title>Mi primer maqueta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <!-- Tipografías del menú compartido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css">
 
     <style>
-        .icono-nav {
-            width: 28px;
-            height: 28px;
-            margin-right: 6px;
-            vertical-align: middle;
-        }
 
         .seccion-img {
             display: flex;
@@ -30,10 +28,6 @@
             object-fit: contain;
         }
 
-        .caja1 {
-            min-height: 100px;
-            background-color: #B5B99F;
-        }
 
         .caja2 {
             padding: 0;
@@ -93,26 +87,30 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <nav
-                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex flex-wrap gap-2 p-4 justify-content-center">
-
-                <a href="#" class="btn btn-outline-light" role="button">
-                    <img src="img/icono-estructura.svg" alt="" class="icono-nav">
-                    Estructura y sintaxis
-                </a>
-                <a href="#" class="btn btn-outline-light" role="button">
-                    <img src="img/icono-especificidad.svg" alt="" class="icono-nav">
-                    Niveles de especificidad
-                </a>
-                <a href="#" class="btn btn-outline-light" role="button">
-                    <img src="img/icono-pseudoclases.svg" alt="" class="icono-nav">
-                    Pseudoclases y elementos
-                </a>
-                <a href="#" class="btn btn-outline-light" role="button">
-                    <img src="img/icono-boxmodel.svg" alt="" class="icono-nav">
-                    Box model
-                </a>
-
+            <!-- MENÚ (igual en todas las páginas; estilos en css/menu.css) -->
+            <!-- celular y tablet: botón hamburguesa | escritorio: botones en fila -->
+            <nav class="col-12 navbar navbar-expand-xl menu" data-bs-theme="dark">
+                <a class="navbar-brand menu-marca" href="index.html">CSS FÁCIL</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <div class="navbar-nav ms-auto gap-2">
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            <img src="img/icono-estructura.svg" alt="" class="menu-icono">Estructura y sintaxis
+                        </a>
+                        <a class="nav-link" href="#">
+                            <img src="img/icono-especificidad.svg" alt="" class="menu-icono">Niveles de especificidad
+                        </a>
+                        <a class="nav-link" href="pseudoclases/index.html">
+                            <img src="img/icono-pseudoclases.svg" alt="" class="menu-icono">Pseudoclases y elementos
+                        </a>
+                        <a class="nav-link" href="#">
+                            <img src="img/icono-boxmodel.svg" alt="" class="menu-icono">Box model
+                        </a>
+                    </div>
+                </div>
             </nav>
             <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 caja2">
                 <img src="img/banner-css-facil.jpg" alt="CSS fácil: aprende paso a paso, diseño web para todos" class="banner">
@@ -138,6 +136,10 @@
         </div>
 
     </div>
+    <!-- Bootstrap: el JavaScript que hace funcionar el botón hamburguesa -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

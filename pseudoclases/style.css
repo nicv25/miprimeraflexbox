@@ -53,24 +53,7 @@ h3 {
 
 
 /* ---------- 2. MENÚ ---------- */
-
-.menu {
-    background-color: var(--salvia);
-    border-radius: 0 0 var(--radio) var(--radio);
-}
-
-.menu .nav-link {
-    color: var(--marfil);
-    border-radius: 999px;
-    transition: background-color .25s;
-}
-
-/* :hover -> al pasar el mouse | .active -> la sección en la que estás */
-.menu .nav-link:hover,
-.menu .nav-link.active {
-    background-color: var(--musgo);
-    color: var(--salvia-oscuro);
-}
+/* El menú está en ../css/menu.css porque lo comparten todas las páginas */
 
 
 /* ---------- 3. BANNER ---------- */
