@@ -1,0 +1,85 @@
+/* =========================================================
+   BOX MODEL - estilos propios
+   Misma disposición de cajas que "Estructura y sintaxis",
+   con colores más oscuros. Las tarjetas "CSS fácil" son claras
+   (crema y pastel) para que contrasten con el fondo.
+   ========================================================= */
+
+body {
+    background-color: #161905;
+}
+
+/* Cada caja centra su ilustración */
+.seccion-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.ilustracion {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* El banner llena el header sin deformarse */
+.banner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+/* Colores de las cajas: versión oscura de la paleta oliva */
+.caja2 {
+    padding: 0;
+    background-color: #2B3113;
+}
+
+.caja3 {
+    min-height: 300px;
+    background-color: #4F5537;
+}
+
+/* La caja 3 usa min-height (para crecer junto al banner en tablet),
+   así que limitamos su imagen para que no la haga más alta que las demás */
+.caja3 .ilustracion {
+    max-height: 276px;
+}
+
+.caja4 {
+    height: 300px;
+    background-color: #6B7A36;
+}
+
+.caja5 {
+    height: 300px;
+    background-color: #3E4A1C;
+}
+
+.caja6 {
+    height: 300px;
+    background-color: #2B3113;
+}
+
+.caja7 {
+    height: 300px;
+    background-color: #1D2108;
+}
+
+.caja8 {
+    height: 300px;
+    background-color: #404B05;
+}
+
+.caja9 {
+    height: 300px;
+    background-color: #5D6A22;
+}
+
+.caja10 {
+    height: 300px;
+    background-color: #7A8A2E;
+}
