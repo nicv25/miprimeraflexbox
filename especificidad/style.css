@@ -70,7 +70,7 @@ h3 {
     margin: 16px 0;
     padding: 16px;
     border-radius: var(--radio);
-    background: var(--crema) url("img/banner-especificidad.svg") center / cover no-repeat;
+    background: var(--crema) url("img/banner-especificidad.webp") center / cover no-repeat;
     box-shadow: var(--sombra);
 }
 
