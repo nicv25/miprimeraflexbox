@@ -9,7 +9,7 @@
    2. Banner
    3. Presentación
    4. Fichas de colores (ids, clases, etiquetas)
-   5. Tablero del marcador
+   5. Tablero del marcador y tarjeta "¿Quién gana?"
    6. Lista de selectores
    7. Reglas del juego
    8. Responsive
@@ -135,14 +135,6 @@ h3 {
 
 /* ---------- 5. TABLERO DEL MARCADOR ---------- */
 
-/* La columna se queda visible mientras bajas por la lista */
-.tablero-columna {
-    position: sticky;
-    top: 8px;
-    z-index: 2;
-    align-self: flex-start;
-}
-
 .tablero {
     padding: 24px;
     border-radius: var(--radio);
@@ -161,10 +153,11 @@ h3 {
 }
 
 .tablero-selector {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
     margin-bottom: 16px;
-    font-size: 1.1rem;
-    color: var(--lima);
 }
 
 .columna {
@@ -205,9 +198,72 @@ h3 {
 }
 
 
+/* Tarjeta "¿Quién gana?" debajo del tablero */
+.duelo {
+    padding: 22px;
+    border-radius: var(--radio);
+    background-color: var(--crema);
+    box-shadow: var(--sombra);
+}
+
+.duelo-titulo {
+    margin: 0 0 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    letter-spacing: .3em;
+    text-align: center;
+    color: var(--oliva-oscuro);
+}
+
+.duelo-fila {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 2px solid var(--marfil);
+    border-radius: 16px;
+}
+
+/* El ganador se marca con borde oliva y fondo verde claro */
+.duelo-ganador {
+    border-color: var(--oliva);
+    background-color: #F1F5E1;
+}
+
+.duelo-puntos {
+    margin-left: auto;
+    white-space: nowrap;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--oliva-oscuro);
+}
+
+.duelo-sello {
+    padding: 2px 10px;
+    border-radius: 999px;
+    background-color: var(--oliva);
+    font-size: .8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.duelo-vs {
+    margin: 6px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+.duelo-texto {
+    margin: 14px 0 0;
+    font-size: .92rem;
+}
+
+
 /* ---------- 6. LISTA DE SELECTORES ---------- */
 
-/* Cada fila es un botón: así funciona con mouse, teclado y toque */
+/* Cada fila es una tarjeta con el selector, su puntaje y una explicación */
 .fila {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -215,13 +271,9 @@ h3 {
     align-items: center;
     width: 100%;
     padding: 14px 18px;
-    border: 2px solid transparent;
     border-radius: 18px;
     background-color: var(--crema);
     box-shadow: var(--sombra);
-    text-align: left;
-    color: var(--texto);
-    transition: transform .2s, border-color .2s, background-color .2s;
 }
 
 .fila-fichas {
@@ -231,6 +283,7 @@ h3 {
 }
 
 .fila-puntos {
+    white-space: nowrap;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     color: var(--oliva-oscuro);
@@ -241,15 +294,6 @@ h3 {
     grid-column: 1 / -1;
     font-size: .88rem;
     color: var(--texto-suave);
-}
-
-.fila:hover,
-.fila:focus-visible,
-.fila.activa {
-    transform: translateX(6px);
-    border-color: var(--oliva);
-    background-color: #F1F5E1;
-    outline: none;
 }
 
 
@@ -314,16 +358,7 @@ h3 {
     }
 
     .tablero {
-        padding: 12px;
-    }
-
-    .tablero-selector {
-        margin-bottom: 8px;
-    }
-
-    .tablero-texto {
-        display: none;
-        /* en celular la explicación ya se lee en la fila */
+        padding: 16px;
     }
 
     .columna {

@@ -66,8 +66,8 @@
                     de un partido: <span class="ficha ficha-id">ids</span> · <span class="ficha ficha-clase">clases</span>
                     · <span class="ficha ficha-etiqueta">etiquetas</span>.</p>
                 <p>Se comparan de <strong>izquierda a derecha</strong>: un solo id le gana a cualquier cantidad de
-                    clases, y una sola clase le gana a cualquier cantidad de etiquetas. Abajo puedes probar el
-                    marcador con 10 selectores.</p>
+                    clases, y una sola clase le gana a cualquier cantidad de etiquetas. Abajo encuentras un
+                    marcador de ejemplo y 10 selectores con su puntaje.</p>
             </div>
             <div class="col d-block d-md-none d-xl-block">
                 <img src="img/como-se-lee.svg" class="imagen"
@@ -75,91 +75,114 @@
             </div>
         </section>
 
-        <!-- 3. MARCADOR: tablero (izquierda) + selectores para probar (derecha) -->
+        <!-- 3. MARCADOR: tablero con un ejemplo (izquierda) + más selectores (derecha) -->
         <section class="row g-4 px-1 pb-5">
-            <!-- La columna del tablero se queda pegada arriba mientras bajas por la lista (position: sticky) -->
-            <div class="col-12 col-xl-5 tablero-columna">
-                <div class="tablero" aria-live="polite">
-                    <p class="tablero-titulo">MARCADOR</p>
-                    <code class="tablero-selector" id="selectorActual">Elige un selector</code>
+            <div class="col-12 col-xl-5">
+                <div class="tablero">
+                    <p class="tablero-titulo">MARCADOR DE EJEMPLO</p>
+                    <p class="tablero-selector">
+                        <span class="ficha ficha-etiqueta">header</span>
+                        <span class="ficha ficha-clase">.menu</span>
+                        <span class="ficha ficha-etiqueta">a</span><span class="ficha ficha-clase">.activo</span><span
+                            class="ficha ficha-etiqueta">::before</span>
+                    </p>
                     <div class="row g-2 g-md-3">
                         <div class="col-4">
                             <div class="columna columna-id">
-                                <span class="numero" id="numeroId">0</span>
+                                <span class="numero">0</span>
                                 <span class="columna-nombre">ids</span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="columna columna-clase">
-                                <span class="numero" id="numeroClase">0</span>
+                                <span class="numero">2</span>
                                 <span class="columna-nombre">clases</span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="columna columna-etiqueta">
-                                <span class="numero" id="numeroEtiqueta">0</span>
+                                <span class="numero">3</span>
                                 <span class="columna-nombre">etiquetas</span>
                             </div>
                         </div>
                     </div>
-                    <p class="tablero-texto" id="textoActual">Pasa el mouse o toca un selector de la lista para ver
-                        su puntaje.</p>
+                    <p class="tablero-texto"><strong>header</strong>, <strong>a</strong> y <strong>::before</strong>
+                        suman 3 etiquetas; <strong>.menu</strong> y <strong>.activo</strong> suman 2 clases; no tiene
+                        ids. Su puntaje es <strong>0 · 2 · 3</strong>.</p>
+                </div>
+
+                <!-- Ejemplo de comparación: dos selectores y el que gana -->
+                <div class="duelo mt-4">
+                    <p class="duelo-titulo">¿QUIÉN GANA?</p>
+                    <div class="duelo-fila duelo-ganador">
+                        <span class="ficha ficha-id">#titulo</span>
+                        <span class="duelo-puntos">1 · 0 · 0</span>
+                        <span class="duelo-sello">gana</span>
+                    </div>
+                    <p class="duelo-vs">vs</p>
+                    <div class="duelo-fila">
+                        <span class="d-flex flex-wrap gap-1"><span class="ficha ficha-clase">.menu</span><span
+                                class="ficha ficha-clase">.boton</span><span class="ficha ficha-clase">.activo</span></span>
+                        <span class="duelo-puntos">0 · 3 · 0</span>
+                    </div>
+                    <p class="duelo-texto">Se compara de izquierda a derecha: en la primera columna 1 es más que 0,
+                        así que gana <strong>#titulo</strong> aunque el otro tenga 3 clases.</p>
                 </div>
             </div>
 
             <div class="col-12 col-xl-7">
-                <span class="etiqueta">02. PRUEBA EL MARCADOR</span>
+                <span class="etiqueta">02. MÁS SELECTORES Y SU PUNTAJE</span>
                 <div class="lista d-flex flex-column gap-2">
-                    <button type="button" class="fila" data-selector="p" data-id="0" data-clase="0" data-etiqueta="1">
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-etiqueta">p</span></span>
                         <span class="fila-puntos">0 · 0 · 1</span>
                         <span class="fila-texto">Una etiqueta suma 1 en la columna de etiquetas.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="*" data-id="0" data-clase="0" data-etiqueta="0">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-universal">*</span></span>
                         <span class="fila-puntos">0 · 0 · 0</span>
                         <span class="fila-texto">El selector universal no suma nada: es el más débil.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="ul li" data-id="0" data-clase="0" data-etiqueta="2">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-etiqueta">ul</span><span class="ficha ficha-etiqueta">li</span></span>
                         <span class="fila-puntos">0 · 0 · 2</span>
                         <span class="fila-texto">Cada etiqueta suma, pero nunca alcanza a una clase.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector=".boton" data-id="0" data-clase="1" data-etiqueta="0">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-clase">.boton</span></span>
                         <span class="fila-puntos">0 · 1 · 0</span>
                         <span class="fila-texto">Una clase vale más que cualquier cantidad de etiquetas.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="a:hover" data-id="0" data-clase="1" data-etiqueta="1">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-etiqueta">a</span><span class="ficha ficha-clase">:hover</span></span>
                         <span class="fila-puntos">0 · 1 · 1</span>
                         <span class="fila-texto">Las pseudoclases cuentan igual que una clase.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="p::first-line" data-id="0" data-clase="0" data-etiqueta="2">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-etiqueta">p</span><span class="ficha ficha-etiqueta">::first-line</span></span>
                         <span class="fila-puntos">0 · 0 · 2</span>
                         <span class="fila-texto">Los pseudoelementos cuentan igual que una etiqueta.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector=".menu .boton.activo" data-id="0" data-clase="3" data-etiqueta="0">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-clase">.menu</span><span class="ficha ficha-clase">.boton</span><span class="ficha ficha-clase">.activo</span></span>
                         <span class="fila-puntos">0 · 3 · 0</span>
                         <span class="fila-texto">Tres clases juntas: 3 puntos en la columna del medio.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="#titulo" data-id="1" data-clase="0" data-etiqueta="0">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-id">#titulo</span></span>
                         <span class="fila-puntos">1 · 0 · 0</span>
                         <span class="fila-texto">Un id gana a cualquier cantidad de clases y etiquetas.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="#menu .boton:hover" data-id="1" data-clase="2" data-etiqueta="0">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-id">#menu</span><span class="ficha ficha-clase">.boton</span><span class="ficha ficha-clase">:hover</span></span>
                         <span class="fila-puntos">1 · 2 · 0</span>
                         <span class="fila-texto">Un id más dos clases: compite en la liga más alta.</span>
-                    </button>
-                    <button type="button" class="fila" data-selector="nav#principal li.activo" data-id="1" data-clase="1" data-etiqueta="2">
+                    </div>
+                    <div class="fila">
                         <span class="fila-fichas"><span class="ficha ficha-etiqueta">nav</span><span class="ficha ficha-id">#principal</span><span class="ficha ficha-etiqueta">li</span><span class="ficha ficha-clase">.activo</span></span>
                         <span class="fila-puntos">1 · 1 · 2</span>
                         <span class="fila-texto">Se cuenta cada parte por separado y se suman por columna.</span>
-                    </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -212,8 +235,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <!-- Nuestro JavaScript: pasa el puntaje de cada selector al marcador -->
-    <script src="marcador.js"></script>
 </body>
 
 </html>
